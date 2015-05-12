@@ -10,7 +10,7 @@ Real IM features:
 * If multiple users have the same UserName, even then they will be trated as different users because userName is just an alias
  for the client side. Internally everything is done using Parse.Anonymous user. This is the expected behaviour of any chat room
  
-Ream IM implementation:
+Real IM implementation:
 * All the messages are sent to a single database in Parse
 * Whenever a user enters the room, he/she can get the chats only after the time he joined
 * The app notes the time stamp of the last chat in the listAdapter and gets only those chats from the database which
