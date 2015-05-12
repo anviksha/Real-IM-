@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RealIM</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="message_hint">Type your message here..</string>
+    <string name="send">Send</string>
+    <string name="title_activity_trial">trialActivity</string>
+    <string name="action_camera">Camera</string>
+    <string name="parse_image_file">DocImage.jpg</string>
+</resources>
