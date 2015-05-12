@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,30 +13,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseFile;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.ParseException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-public class ChatActivity extends ActionBarActivity {
+public class RealIMActivity extends ActionBarActivity {
 
     private EditText messageText;
     private String userId;
@@ -55,7 +48,7 @@ public class ChatActivity extends ActionBarActivity {
 
         ListView chatList = (ListView) findViewById(R.id.chatList);
         ArrayList<Message> mMessages = new ArrayList<Message>();
-        mAdapter = new ChatListAdapter(ChatActivity.this, userId, mMessages);
+        mAdapter = new ChatListAdapter(RealIMActivity.this, userId, mMessages);
         chatList.setAdapter(mAdapter);
         receiveMessage();
     }
@@ -159,7 +152,7 @@ public class ChatActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                progressDialog = new ProgressDialog(ChatActivity.this);
+                progressDialog = new ProgressDialog(RealIMActivity.this);
                 progressDialog.setTitle("Joining...");
                 progressDialog.setMessage("Please wait");
                 progressDialog.show();
@@ -167,7 +160,7 @@ public class ChatActivity extends ActionBarActivity {
                 Bitmap bitmap = decodeSampledBitmapFromFile(file.getAbsolutePath(), 300, 300);
                 saveImageInParse(bitmap);
             }else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(ChatActivity.this, "User Cancelled the request ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RealIMActivity.this, "User Cancelled the request ", Toast.LENGTH_SHORT).show();
             }
         }
     }

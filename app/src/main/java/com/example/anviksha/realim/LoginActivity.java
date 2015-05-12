@@ -2,27 +2,20 @@ package com.example.anviksha.realim;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-
-import java.io.Console;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -91,7 +84,7 @@ public class LoginActivity extends ActionBarActivity {
                 } else {
                     progressDialog.dismiss();
                     userId = ParseUser.getCurrentUser().getObjectId();
-                    Intent chatActivity = new Intent(getBaseContext(), ChatActivity.class);
+                    Intent chatActivity = new Intent(getBaseContext(), RealIMActivity.class);
                     startActivity(chatActivity);
                 }
             }

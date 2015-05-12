@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChatActivity"
-            android:label="@string/app_name" >
+            android:name=".RealIMActivity"
+            android:label="Chat Room" >
         </activity>
     </application>
 
