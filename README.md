@@ -11,7 +11,7 @@ Real IM features:
  for the client side. Internally everything is done using Parse.Anonymous user. This is the expected behaviour of any chat room
  
 Real IM implementation:
-* All the messages are sent to a single database in Parse
+* All the messages(containing uniqueId and userName) are sent to a single database in Parse
 * Whenever a user enters the room, he/she can get the chats only after the time he joined
 * The app notes the time stamp of the last chat in the listAdapter and gets only those chats from the database which
   were created after the last one. This ensures we dont get any duplicate chats.
